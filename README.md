@@ -1,2 +1,2 @@
-for testing, run try.py /n
+for testing, run try.py <br/>
 datasets is in data folder
