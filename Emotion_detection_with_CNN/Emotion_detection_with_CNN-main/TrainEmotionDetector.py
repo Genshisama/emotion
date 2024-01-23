@@ -7,8 +7,8 @@ from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
 
 # Initialize image data generator with rescaling
-train_data_gen = ImageDataGenerator(rescale=1./255)
-validation_data_gen = ImageDataGenerator(rescale=1./255)
+train_data_gen = ImageDataGenerator(rescale=1.0/255)
+validation_data_gen = ImageDataGenerator(rescale=1.0/255)
 
 # Preprocess all test images
 train_generator = train_data_gen.flow_from_directory(
@@ -47,10 +47,10 @@ emotion_model.add(Dense(7, activation='softmax'))
 
 cv2.ocl.setUseOpenCL(False)
 
-emotion_model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.0001, decay=1e-6), metrics=['accuracy'])
+emotion_model.compile(loss='categorical_crossentropy', optimizer=Adam(learning_rate=0.0001, decay=1e-6), metrics=['accuracy'])
 
 # Train the neural network/model
-emotion_model_info = emotion_model.fit_generator(
+emotion_model_info = emotion_model.fit(
         train_generator,
         steps_per_epoch=28709 // 64,
         epochs=50,

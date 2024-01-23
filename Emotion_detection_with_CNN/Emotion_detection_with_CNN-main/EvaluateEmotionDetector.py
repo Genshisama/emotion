@@ -66,5 +66,3 @@ plt.xlabel('Emotion Class')
 plt.ylabel('Score')
 plt.legend()
 plt.show()
-
-
