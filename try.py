@@ -8,13 +8,13 @@ from tkinter import filedialog
 emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
 # Load JSON and create model
-json_file = open('model.json', 'r')
+json_file = open('model85.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 emotion_model = model_from_json(loaded_model_json)
 
 # Load weights into the new model
-emotion_model.load_weights("model.h5")
+emotion_model.load_weights("model85.h5")
 print("Loaded model from disk")
 
 # Create a global variable to store the selected file path
